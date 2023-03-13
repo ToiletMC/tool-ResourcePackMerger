@@ -20,15 +20,6 @@ jobs:
         run: npm ci
       - name: Build RP
         run: npm run build
-          
-      - name: upload files
-        uses: fangbinwei/aliyun-oss-website-action@v1.3.1
-        with:
-            accessKeyId: ${{ secrets.ACCESSKEY_ID }}
-            accessKeySecret: ${{ secrets.ACCESSKEY_SECRET }}
-            bucket: web-toiletmc
-            endpoint: oss-cn-hangzhou.aliyuncs.com
-            folder: ./build
             
       - name: Automatic Releases
         uses: marvinpinto/action-automatic-releases@v1.2.1
